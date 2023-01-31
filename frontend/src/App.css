@@ -1,0 +1,213 @@
+/************ Custom Font ************/
+/* @font-face {
+  font-family: Centra;
+  src: url('./assets/font/CentraNo2-Bold.ttf');
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: Centra;
+  src: url('./assets/font/CentraNo2-Medium.ttf');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: Centra;
+  src: url('./assets/font/CentraNo2-Book.ttf');
+  font-weight: 400;
+} */
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 75px;
+}
+
+.scrolled {
+  transition: all 0.2s;
+  height: 3rem;
+}
+
+nav {
+  height: 5rem;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 1280px;
+  width: 100%;
+  z-index: 999;
+}
+
+.hamburger {
+  display: none;
+}
+
+.contain {
+  background-image: url("https://github.com/judygab/web-dev-projects/blob/main/personal-portfolio/src/assets/img/banner-bg.png?raw=true");
+}
+
+.robot {
+  max-zoom: 1;
+}
+
+.home__left,
+.home__right {
+  flex: 0.5;
+}
+
+.project__container {
+  max-width: 1280px;
+  width: 100%;
+  margin: auto;
+}
+
+.card {
+  position: relative;
+}
+
+.imgbox > img {
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: purple;
+}
+
+.card:hover .overlay {
+  opacity: 1;
+}
+
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+@media only screen and (max-width: 1280px) {
+
+  .home, .project__container,
+  nav {
+      padding-left: 10px;
+      padding-right: 10px;
+  }
+
+  .home__left {
+      flex: 0.6;
+  }
+
+  .home__right {
+      flex: 0.4;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+
+  .scrolled {
+      height: 3rem !important;
+  }
+
+  nav {
+      width: 100%;
+      background-color: bisque;
+      height: 3rem;
+      padding: 0 1rem;
+  }
+
+  nav>ul {
+      position: absolute;
+      flex-direction: column;
+      /* align-items: center; */
+      /* justify-content: center; */
+      width: 100% !important;
+      margin-top: 3rem;
+      top: 0;
+      left: 0;
+      height: 0;
+      background-color: aqua;
+      transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1) 100ms;
+  }
+
+  nav>ul>li {
+      width: 100%;
+      padding: 0.5rem;
+      opacity: 0;
+      text-align: center;
+      transition: opacity 200ms ease-in-out;
+  }
+
+  nav>ul>li:not(last-child) {
+      border-bottom: 1px solid black;
+  }
+
+  .hamburger {
+      display: block;
+      height: 1.5rem;
+      width: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+  }
+
+  .bar {
+      width: 100%;
+      height: 5px;
+      background: #fff;
+      border-radius: 2px;
+      transition: 0.4s ease;
+      margin-bottom: 1px;
+  }
+
+  .bar1 {
+      transform: translateY(9px) rotate(-45deg);
+  }
+
+  .bar2 {
+      opacity: 0;
+  }
+
+  .bar3 {
+      margin-top: -12px;
+      transform: translateY(-9px) rotate(45deg);
+  }
+
+  .toggle {
+      transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+      height: 7.5rem;
+  }
+
+  .toggle__li {
+      transition: opacity 400ms ease-in-out -100ms;
+      opacity: 1;
+  }
+
+}
+
+@media only screen and (max-width: 768px) {
+  .home {
+      flex-direction: column;
+  }
+
+  .home__left,
+  .home__right {
+      flex: 1;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .project__container {
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+}
